@@ -1,0 +1,14 @@
+p{
+    color: floralwhite;
+    background-color: salmon;
+}
+head{
+    color: darkblue;
+}
+body{
+    background-color: lightblue;
+}
+img{
+    max-width: 80ch;
+    height: auto;
+}
