@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300&display=swap');
+/* *{
+    border: 1px solid;
+} */
+body{
+    font-family: 'Noto Sans Mono', monospace;
+    font-size: .98em;
+    max-width: 1080px; 
+    margin: auto;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+p{
+   /* width: 70ch;*//*only lets it go to 70 characters then returns text down page*/
+    max-width: 1000px; 
+}
+.banner img{
+    width: 100%;
+}
+
+.mission h2{
+    text-align: center;
+    margin-top: 0em;
+}
+.mission p{
+    /* margin: auto; center the text and override p max width */
+    text-align: center; /* makes the text in centered form vs aligned left*/
+    background-color: lightgreen;
+}
+.mission{
+    background-color: aqua;
+    padding: 1em    ;
+    margin: 1em 0em;
+    
+
+}
