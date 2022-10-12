@@ -64,6 +64,7 @@ body{
     background-color: #333;
     color: white;
 }
-.dark h2{
-    color: blue;
+.dark h3{
+    color: rgb(132, 132, 255);
+    border-color: rgb(132, 132, 150);;
 }

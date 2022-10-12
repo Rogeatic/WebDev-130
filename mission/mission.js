@@ -14,13 +14,13 @@ function changeTheme(){
     if(val == 1){ //Dark
         if(!document.body.classList.contains("dark")){
             document.body.classList.add("dark");
-            document.querySelector("footPic").src = "mission/byui-logo_white.png";
+            document.querySelector("#footPic").src = "byui-logo_white.png";
         }
     }
     else{ //should be Light
         if(document.body.classList.contains("dark")){
             document.body.classList.remove("dark");
-            document.querySelector("footPic").src = "mission/byui-logo_blue.webp";
+            document.querySelector("#footPic").src = "byui-logo_blue.webp";
         }
     }
 }
