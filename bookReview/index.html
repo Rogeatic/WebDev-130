@@ -4,26 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <script src="blog.js"></script>
     <link rel="stylesheet" href="blog.css">
 </head>
 <header>
     <h1>Kids Read For Fun</h1>
-    <nav>
-        <ul class="Links">
-            <li class="about"><a href="">About</a></li>
-            <li class="archive"><a href="">Archive</a></li>
-            <li class="search"><a href="">Search</a></li>
+    <nav class="Links">
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Archive</a></li>
+            <li><a href="#">Search</a></li>
         </ul>
     </nav>
 </header>
 <body>
-    <div class="left">
-        Books:
-    </div>
-    <div class="right">
-        filters:
+    <div class="books">
+        <div class="left">
+            <p>Date</p>
+            <p>Age</p> 
+            <p>Genre</p>
+            <p>*****</p>
+        </div>
+        <div class="middle">
+            <p class="book_title">Books:</p>
+            <img src="" alt="book picture">
+            <p>book summary <a href="#">Read More...</a></p>
+        </div>
+        <div class="right">
+            <p>filters:</p>
+            <select name="Genre" id="drop1"></select>
+        </div>
     </div>
 </body>
 </html>
