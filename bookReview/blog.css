@@ -1,0 +1,17 @@
+*{
+    border: 1px solid;
+}
+.Links{
+    display: inline-block;
+    display:flex; /* makes it all on one line*/
+    
+    list-style-type:none;
+    width: 100%;
+    
+}
+.Links li{
+    padding-right: 1em;
+    
+}
+.Links ul{
+}
