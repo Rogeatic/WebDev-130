@@ -3,8 +3,40 @@
   <head>
     <title>Array Activities</title>
     <script src="arrays.js" defer></script>
+    <style>
+      img{
+        max-width: 100%;
+      }
+      .meal-list{
+        list-style-type: none;
+        width: 400px;
+        text-align: center;
+      }
+      .mealCard{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        border: 1px solid;
+      }
+      .mealCard img{
+        grid-row: 1/4;
+        padding: .5em;
+      }
+      .mealCard h2{
+        grid-row: 1/2;
+        grid-column: 2/4;
+        margin: 0;
+      }
+      .catagory{
+        grid-row: 2/3;
+        grid-column: 2/4;
+        margin: .5em;
+      }
+    </style>
   </head>
   <body>
     <ul id="myList"></ul>
+    <main>
+      <h1>My Meals</h1>
+    </main>
   </body>
 </html>
