@@ -67,5 +67,8 @@ function renderBooksTemplates(){
     newART.insertAdjacentHTML("afterBegin", htmlBooks.join(''));
     document.querySelector(".articles").insertAdjacentElement("beforeend", newART);
 }
-
 renderBooksTemplates();
+
+// function addFilters(){
+//   document.querySelector(".filters").
+// }
