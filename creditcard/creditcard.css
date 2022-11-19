@@ -25,7 +25,7 @@ h1{
     margin-top: 1em;
 }
 .card2{
-    grid-column: 2/4;
+        
     grid-row: 2/4;
     border-radius: 8px;
     box-shadow: 5px 8px rgba(23, 15, 15, 0.532);
