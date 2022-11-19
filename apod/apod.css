@@ -27,11 +27,21 @@ h2{
     background-color: rgb(255, 97, 97);
 }
 #images{
-    display: block;
+    display: grid;
     padding: 1em;
     margin: 1em;
     border-bottom: 1px solid black;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid black;
+
 }
-img{
+#planetIMG{
+    grid-column: 1/2;
+}
+#planetIMG img{
     max-width: 300px;
+}
+#ImageTxt{
+    grid-column: 2/3;
+
 }

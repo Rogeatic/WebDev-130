@@ -13,7 +13,17 @@ async function getApod(url){
 async function output() {
   const data = await getApod(apodUrl)
   console.log(data);
-  document.body.querySelector("#images").insertAdjacentHTML("beforeend", `<p> Name: ${data.title}</p><img src="${data.url}" alt="${data.explanation}">`);
+  document.body.querySelector("#images").insertAdjacentHTML("beforeend", 
+  `<div id="planetIMG">
+  <img src="${data.url}" alt="${data.explanation}">
+  </div>
+  <div id="ImageTxt">
+  <h2>${data.title}</h2>
+  <p>${data.date}</p>
+  <p>${data.explanation}</p>
+  </div> 
+  `
+  );
   
 }
 
