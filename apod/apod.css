@@ -37,7 +37,7 @@ h2{
     border-bottom: 1px solid black;
     grid-template-columns: 1fr 1fr;
     border: 1px solid black;
-
+    
 }
 #planetIMG{
     grid-column: 1/2;
