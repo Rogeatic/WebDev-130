@@ -22,9 +22,13 @@ h2{
     display: block;
     border: 1px black solid;
     width: 80%;
-    padding: .5em;
     margin: auto;
     background-color: rgb(255, 97, 97);
+}
+#errors p{
+    margin-top: .5em;
+    margin-bottom: .5em;
+    margin-left: 1em;
 }
 #images{
     display: grid;
