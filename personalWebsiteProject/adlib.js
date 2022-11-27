@@ -68,7 +68,6 @@ async function output() {
 
 }
 function clickedFinished(){
-    document.body.querySelector("#Finished").remove()
     const inputs = document.getElementsByClassName("Inputs")
     let filledOut = true;
     
@@ -77,17 +76,17 @@ function clickedFinished(){
     }
     document.body.querySelector("#errors").innerHTML = ""
 
-    // for (i=0; i<inputs.length; i++){
-    //     if(!inputs[i].value){
-    //         filledOut = false;
-    //     }
-    // }
+    for (i=0; i<inputs.length; i++){
+        if(!inputs[i].value){
+            filledOut = false;
+        }
+    }
     if(filledOut == true){
         
         for (i=0; i<inputs.length; i++){
             inputList.push(inputs[i].value)
         }
-
+        document.body.querySelector("#Finished").remove()
 
         document.querySelector('#FinalAdlibLocation').insertAdjacentHTML("beforeend", `<section id="adlibLocation"><p id="name"> Story: ${dataGrabbed.title}` + `<p id="finalText">${generateAdlibHtml(dataGrabbed.value)}</p>
         </section>`);
