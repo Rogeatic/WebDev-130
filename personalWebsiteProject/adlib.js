@@ -16,11 +16,10 @@ function generateAdlibHtml(valueList){
     let grabbed = ""
     for (i = 0; i < valueList.length-1; i++){
         grabbed += `${valueList[i]}`;
-        if(i <= inputList.length){
-            grabbed += `<p class="inputInsert"> ${inputList[i]} </p>`
+        if(i <= (inputList.length)-1){
+            grabbed += `<a class="inputInsert"> ${inputList[i]} </a>`
         }
     }
-    console.log(grabbed)
     return`
         <p>
             ${grabbed}
@@ -29,39 +28,85 @@ function generateAdlibHtml(valueList){
 }
 function generateWordHtml(wordsList){
     let words = ''
+    let words1 = ''
+    let words2 = ''
     for (i = 0; i < wordsList.length; i++){
-        words += `
-        <input type="text" id="name" name="name" class="Inputs">
-        <label for ${i}>${wordsList[i]}</label>
+        if(i < wordsList.length/2){
+        words1 += `
+        <a>${i+1}</a>
+        <input type="text" id="name" name="name" class="Inputs" placeholder=${wordsList[i]}>
         <br>
         `;
+        }
+        else{
+            words2 += `
+            <a>${i+1}</a>
+            <input type="text" id="name" name="name" class="Inputs" placeholder=${wordsList[i]}>
+            <br>
+            `;
+        }
+
+        words = `<div id="wordsLists">
+            <div id="first">
+            ${words1}
+            </div>
+            <div id="second">
+            ${words2}
+            </div>
+        </div>
+        `
     }
-    console.log(words)
     return `${words}`
 }
 
 let dataGrabbed
 async function output() {
     dataGrabbed = await getAdlib(adlibURL)
-    console.log(dataGrabbed);
     
 
-    document.body.querySelector("#wordsLocation").insertAdjacentHTML("afterbegin", generateWordHtml(dataGrabbed.blanks));
+    document.body.querySelector("#wordsLocation").insertAdjacentHTML("afterbegin", `<p>${generateWordHtml(dataGrabbed.blanks)}</p>`);
 
-    // document.body.querySelector("#adlibLocation").insertAdjacentHTML("beforeend", `<p> Name: ${data.title}`);
-
-    // document.body.querySelector("#adlibLocation").insertAdjacentHTML("beforeend", generateAdlibHtml(data.value));
-    
 }
 function clickedFinished(){
+    document.body.querySelector("#Finished").remove()
     const inputs = document.getElementsByClassName("Inputs")
-    for (i=0; i<inputs.length; i++){
-        inputList.push(inputs[i].value)
+    let filledOut = true;
+    
+    if(document.querySelector("#adlibLocation")){
+        document.body.querySelector("#adlibLocation").remove()
     }
-    console.log(inputList)
+    document.body.querySelector("#errors").innerHTML = ""
 
-    document.body.querySelector("#adlibLocation").insertAdjacentHTML("beforeend", `<p> Name: ${dataGrabbed.title}` + generateAdlibHtml(dataGrabbed.value));
+    // for (i=0; i<inputs.length; i++){
+    //     if(!inputs[i].value){
+    //         filledOut = false;
+    //     }
+    // }
+    if(filledOut == true){
+        
+        for (i=0; i<inputs.length; i++){
+            inputList.push(inputs[i].value)
+        }
+
+
+        document.querySelector('#FinalAdlibLocation').insertAdjacentHTML("beforeend", `<section id="adlibLocation"><p id="name"> Story: ${dataGrabbed.title}` + `<p id="finalText">${generateAdlibHtml(dataGrabbed.value)}</p>
+        </section>`);
+
+        let ResetBut = document.createElement("button");
+        ResetBut.innerHTML = "Restart";
+        ResetBut.id ="Reset"
+        document.body.querySelector('#ResetButtonlocation').appendChild(ResetBut);
+        ResetBut.addEventListener('click', resetAll)
+    }
+    else{
+        
+        document.body.querySelector("#errors").innerHTML = `<p>Not all answers are  filled out.</p>`
+    }
 }
+function resetAll(){
+    location.reload();
+}
+
 
 output();
 
