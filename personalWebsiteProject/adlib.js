@@ -1,4 +1,4 @@
-const adlibURL = "http://madlibz.herokuapp.com/api/random"
+const adlibURL = "https://madlibz.herokuapp.com/api/random"
 //https://madlibz.herokuapp.com/api
 let inputList = []
 
@@ -20,11 +20,7 @@ function generateAdlibHtml(valueList){
             grabbed += `<a class="inputInsert"> ${inputList[i]} </a>`
         }
     }
-    return`
-        <p>
-            ${grabbed}
-        </p>
-    `
+    return grabbed
 }
 function generateWordHtml(wordsList){
     let words = ''
@@ -88,7 +84,7 @@ function clickedFinished(){
         }
         document.body.querySelector("#Finished").remove()
 
-        document.querySelector('#FinalAdlibLocation').insertAdjacentHTML("beforeend", `<section id="adlibLocation"><p id="name"> Story: ${dataGrabbed.title}` + `<p id="finalText">${generateAdlibHtml(dataGrabbed.value)}</p>
+        document.querySelector('#FinalAdlibLocation').insertAdjacentHTML("beforeend", `<section id="adlibLocation"><p id="name"> Story: ${dataGrabbed.title}` + `<p id="finalText" >${generateAdlibHtml(dataGrabbed.value)}</p>
         </section>`);
 
         let ResetBut = document.createElement("button");

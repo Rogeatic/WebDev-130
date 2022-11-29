@@ -8,6 +8,9 @@ header{
 header p{
     text-decoration: underline;
 }
+p{
+    line-height: 1.5;
+}
 .inputInsert{
     color: red;
     font-weight: bold;
@@ -53,11 +56,18 @@ header p{
     padding-top: .5em;
     padding-bottom: .5em;
     padding-left: 1.5em;
+    margin: auto;
     margin-top: 1em;
     margin-bottom: 1em;
     background-color: lightblue;
     border-radius: 1em;
     border: 1px solid rgba(34, 34, 238, .4);
+    max-width: 77ch;
+    
+
+}
+#finalText{
+    text-indent: 3ch;
 }
 #Finished{
     transition-duration: 0.4s;
