@@ -5,7 +5,10 @@ header{
     text-align: center;
     margin-bottom: 2em;
 }
-header p{
+#return{
+    text-align: left;
+}
+#guide{
     text-decoration: underline;
 }
 p{
