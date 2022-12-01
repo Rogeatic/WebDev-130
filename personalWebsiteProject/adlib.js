@@ -3,12 +3,24 @@ const adlibURL = "https://madlibz.herokuapp.com/api/random"
 let inputList = []
 
 async function getAdlib(url){
-    const response = await fetch(url);
-    if(response.ok){
-      const data = await response.json();
-      
-      console.log(data);
-      return data;
+    try{
+        const response = await fetch(url);
+        if(response.ok){
+            const data = await response.json();
+            
+            console.log(data);
+            return data;
+        }
+    }
+    catch{
+        const response = await fetch('adlib.json')
+        if(response.ok){
+            let data = await response.json();
+            data = data['templates'][Math.floor(Math.random() * data['templates'].length)];
+            
+            console.log(data);
+            return data;
+        }        
     }
 }
 
