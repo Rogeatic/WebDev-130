@@ -6,6 +6,8 @@ header{
     margin-bottom: 2em;
 }
 #return{
+    padding-top: 0em;
+    margin: 0;
     text-align: left;
 }
 #guide{
@@ -29,7 +31,7 @@ p{
 }
 #wordsLocation input{
     text-align: center;
-
+    margin-bottom: 5px;
 }
 #wordsLists{
     display: grid;
@@ -43,7 +45,6 @@ p{
 }
 #second{
     grid-column: 2/3;
-    
 }
 
 #wordsLocation p{
