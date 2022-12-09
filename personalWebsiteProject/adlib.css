@@ -114,3 +114,12 @@ p{
     bottom: 0;
     width: 100%;
 }
+@media screen and (max-width:400px){
+    #wordsLists{
+        display: block;
+        margin: auto;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
+}
